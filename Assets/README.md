@@ -6,8 +6,8 @@ To open an existing scene with game objects go to the Project view (usually at t
 folder scenes you can find all the scenes. Open the first one and you will find the level with the player, terrain etc. [Source](https://forum.unity.com/threads/game-objects-missing-from-hierarchy-pane.23289/)
 
 ## Good tutorials:
-This project was created with this tutorial: [link](https://youtube.com/playlist?list=PLrnPJCHvNZuCVTz6lvhR81nnaf1a-b67U)
-Tutorial on how to build to android devices: [link](https://youtu.be/Nb62z3J4A_A)
+- This project was created with this tutorial: [link](https://youtube.com/playlist?list=PLrnPJCHvNZuCVTz6lvhR81nnaf1a-b67U)
+- Tutorial on how to build to android devices: [link](https://youtu.be/Nb62z3J4A_A)
 
 ## Other
 Child objects:   The position of child objects it relative to their parents.
