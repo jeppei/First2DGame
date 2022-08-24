@@ -10,8 +10,8 @@ folder scenes you can find all the scenes. Open the first one and you will find 
 - Tutorial on how to build to android devices: [link](https://youtu.be/Nb62z3J4A_A)
 
 ## Other
-Child objects:   The position of child objects it relative to their parents.
-Camera movement: The camera is set as a child to the player object. In that way it follows the player.
+- Child objects: The position of child objects it relative to their parents.
+- Camera movement: The camera is set as a child to the player object. In that way it follows the player.
 
 ## Components
 #### Grid
