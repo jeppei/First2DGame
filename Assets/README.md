@@ -22,7 +22,7 @@ Camera movement: The camera is set as a child to the player object. In that way 
 - Defines the postiion, rotation and scale for the object
 
 #### Tilemap
-- This one is used by the Tile palette to draw tiles in this object. This is used by the background and the terrain. Here is a good tutorial on how to set this up: https://youtu.be/QkbGr1rAya8
+- This one is used by the Tile palette to draw tiles in this object. This is used by the background and the terrain. Here is a good tutorial on how to set this up: [link](https://youtu.be/QkbGr1rAya8)
 
 #### Tilemap renderer
 - The sorting layer is to sort the background behind the Terrain and player.
