@@ -9,9 +9,11 @@ folder scenes you can find all the scenes. Open the first one and you will find 
 - This project was created with this tutorial: [link](https://youtube.com/playlist?list=PLrnPJCHvNZuCVTz6lvhR81nnaf1a-b67U)
 - Tutorial on how to build to android devices: [link](https://youtu.be/Nb62z3J4A_A)
 
-## Other
-- Child objects: The position of child objects it relative to their parents.
-- Camera movement: The camera is set as a child to the player object. In that way it follows the player.
+## Camera movement
+The camera is set as a child to the player object. In that way it follows the player.
+
+## Hierarchy
+The position of child objects it relative to their parents.
 
 ## Components
 #### Grid
