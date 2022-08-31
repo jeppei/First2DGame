@@ -39,6 +39,8 @@ Are use to check collisions between objects.
     - Tilemap collider 2D
     - Composite colider 2D
         - Add this and set Tilemap Collider 2D / Used by composite = true to make the platform bounds around the terrain and not arround each square/tile.
+    - Box Collider 2D
+        - "Is Trigger" disables so that the player doesn collide with the object and instead goes throug it and then it triggers something.
 
 ### **Plattform effector 2D**
 This one is added so that the player cannot stick to the side of plattforms. Untick the "Use One Way" and In "Composite Collider 2d" check the box "Used By Effector"
@@ -48,3 +50,25 @@ Are added to add code to objects. For example a movement script is added to the 
 
 ### **Sprite renderer**
 To add a sprite to an object. The players sprite is added here.
+
+### **UI Components**
+When creating a text (legacy) game object, a canvas game object and a Event system game object will also be created (dont delete these). 
+The text game object will be placed under a canvas game object. 
+
+The Canvas game object has the following components:
+- Rect Transform
+- Canvas
+- Canvas Scalar
+- Graphic Raycaster
+
+The Text game object has the following components:
+- Rect Transform
+- Canvas Renderer
+- Text
+
+The EventSystem game object has the following components:
+- Transform
+Event System
+Standalone Input Module
+
+The EventSystem is handles inputs mouse clicks and buttons.
