@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            Debug.Log("JUMP");
             rigidBody.velocity = new Vector2(0, jumpVelocity);
         }
 
