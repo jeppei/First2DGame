@@ -7,13 +7,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpVelocity;
     [SerializeField] private float runVelocity;
     [SerializeField] private LayerMask jumpableGround;
+    [SerializeField] private AudioSource jumpSoundEffect;
 
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private Animator animator;
     private SpriteRenderer sprite;
-
     private enum AnimationState { idle, running, jumping, falling };
+
 
     // Start is called before the first frame update (when the game starts)
     private void Start()
@@ -33,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            Debug.Log("JUMP");
+            jumpSoundEffect.Play();
             rigidBody.velocity = new Vector2(0, jumpVelocity);
         }
 

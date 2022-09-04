@@ -8,6 +8,7 @@ public class PlayerLife : MonoBehaviour
 
     private Rigidbody2D rigidBody;
     private Animator animator;
+    [SerializeField] private AudioSource deatchSoundEffect;
 
     // Start is called before the first frame update
     private void Start()
@@ -20,6 +21,7 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
+            deatchSoundEffect.Play();
             Die();
         }
     }
