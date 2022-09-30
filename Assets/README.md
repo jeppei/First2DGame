@@ -34,7 +34,7 @@ Add a rigid body to make the object behave as an physics object with gravity.
 - Set Constraint / Freeze Rotation = True to not make the player rotate.
 
 ### **Colliders**
-Are use to check collisions between objects. 
+Are use to check collisions between objects. Collisions can only be detected between a Collider and a RigidBody. For more info see this thread: https://forum.unity.com/threads/how-do-i-detect-collision-between-colliders.264594/
 - Colliders:
     - Tilemap collider 2D
     - Composite colider 2D
