@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,11 +11,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private AudioSource jumpSoundEffect;
 
+    [SerializeField] private Text cherriesText;
+    [SerializeField] private AudioSource collectSoundEffect;
+
+    private int collectedCherries = 0;
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private Animator animator;
     private SpriteRenderer sprite;
     private int nrAirJumps;
+
+    private bool doubleJumpEnabled;
 
     private enum AnimationState { idle, running, jumping, falling };
 
@@ -27,13 +34,18 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         nrAirJumps = 0;
+        doubleJumpEnabled = false;
     }
 
     // Update is called once per frame
     private void Update()
     {
         float dirX = Input.GetAxis("Horizontal");
-        rigidBody.velocity = new Vector2(dirX * runVelocity, rigidBody.velocity.y);
+        
+        if (rigidBody.bodyType != RigidbodyType2D.Static)
+        {
+            rigidBody.velocity = new Vector2(dirX * runVelocity, rigidBody.velocity.y);
+        }
 
 
         if (IsGrounded())
@@ -64,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool CanJump()
     {
-        return IsGrounded() || this.nrAirJumps == 0; 
+        return IsGrounded() || (this.nrAirJumps == 0 && doubleJumpEnabled); 
     }
 
     private bool IsGrounded()
@@ -91,5 +103,23 @@ public class PlayerMovement : MonoBehaviour
                                             AnimationState.idle;
 
         animator.SetInteger("animationState", (int)animationState);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("Kiwi"))
+        {
+            collectSoundEffect.Play();
+            Destroy(collision.gameObject);
+            doubleJumpEnabled = true;
+        }
+        else if (collision.gameObject.CompareTag("Cherry"))
+        {
+            collectSoundEffect.Play();
+            Destroy(collision.gameObject);
+            collectedCherries++;
+            cherriesText.text = $"Cherries: {collectedCherries}";
+        }
     }
 }
